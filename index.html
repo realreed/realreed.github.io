@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reed Bambrough | My Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --card-bg: #161b22;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 20px;
+        }
+        h1 { color: #ffffff; margin-bottom: 5px; }
+        h2 { color: var(--accent-color); margin-top: 30px; }
+        .subtitle { color: #8b949e; font-style: italic; margin-top: 0; }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card h3 { margin-top: 0; color: #ffffff; }
+        .tag {
+            background-color: #1f6feb;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #21262d;
+            color: var(--accent-color);
+            padding: 8px 16px;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .btn:hover { background-color: #30363d; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Reed Bambrough</h1>
+            <p class="subtitle">9th Grader | Exploring neuroscience, topology, string theory gas cosmology, and mathematical philoosophy</p>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I am Reed Bambrough, a student going into 9th grade with a heavy passion for neuroscience, theoretical physics, emergent systems, governance, and mathematical philosphy</p>
+        </section>
+
+        <section id="projects">
+            <h2>Technical Projects</h2>
+            <div class="card">
+                <h3>NASA NEO Dashboard <span class="tag">Python</span></h3>
+                <p>A computational astrophysics dashboard that maps real-time Near-Earth Object (NEO) data from a 7-week timeframe onto a 2-dimensional plane utilizing Keplerian dynamics.</p>
+                <a href="YOUR_NASA_REPO_LINK_HERE" class="btn" target="_blank">View Code on GitHub</a>
+            </div>
+        </section>
+
+        <section id="essays">
+            <h2>Theoretical Notes & Essays</h2>
+            <div class="card">
+                <h3>Planetary Life Bias & Emergent Behavior</h3>
+                <p><em>Abstract:</em> An analysis of the anthropic bias inherent to planetary observers. This note explores the probability of life as an inevitable emergent property of complex topological systems rather than a statistical anomaly requiring fine-tuning...</p>
+                <p style="color: #8b949e; font-size: 14px;">[Full text coming soon]</p>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications & Studies</h2>
+            <ul>
+                <li><strong>HarvardX: Fundamentals of Neuroscience</strong> — <em>In Progress</em></li>
+                <li><strong>Google AI Essentials</strong> — <em>In Progress</em></li>
+                <li><strong>GitHub Foundations</strong> — <em>In Progress</em></li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>
