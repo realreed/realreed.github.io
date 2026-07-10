@@ -30,14 +30,59 @@
             padding-bottom: 20px;
         }
         h1 { color: #ffffff; margin-bottom: 5px; }
-        h2 { color: var(--accent-color); margin-top: 30px; }
+        h2 { color: var(--accent-color); margin-top: 0; margin-bottom: 0; font-size: 20px; }
         .subtitle { color: #8b949e; font-style: italic; margin-top: 0; }
+        
+        /* Dropdown Styling */
+        details {
+            background-color: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+        details:hover {
+            border-color: #444c56;
+        }
+        summary {
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            font-weight: 600;
+        }
+        /* Custom arrow alignment */
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary::after {
+            content: "►";
+            font-size: 12px;
+            color: #8b949e;
+            transition: transform 0.2s ease;
+        }
+        details[open] summary::after {
+            transform: rotate(90deg);
+        }
+        .dropdown-content {
+            padding: 20px;
+            border-top: 1px solid #30363d;
+            background-color: #0d1117;
+        }
+        
         .card {
             background-color: var(--card-bg);
             border: 1px solid #30363d;
             border-radius: 6px;
             padding: 20px;
             margin-bottom: 20px;
+        }
+        .card:last-child {
+            margin-bottom: 0;
         }
         .card h3 { margin-top: 0; color: #ffffff; }
         .tag {
@@ -60,8 +105,9 @@
             margin-top: 10px;
         }
         .btn:hover { background-color: #30363d; }
-        ul { padding-left: 20px; }
+        ul { padding-left: 20px; margin: 0; }
         li { margin-bottom: 10px; }
+        li:last-child { margin-bottom: 0; }
     </style>
 </head>
 <body>
@@ -69,58 +115,70 @@
     <div class="container">
         <header>
             <h1>Reed Bambrough</h1>
-            <p class="subtitle">9th Grader | Exploring neuroscience, topology, string theory gas cosmology, and mathematical philoosophy</p>
+            <p class="subtitle">9th Grader | Exploring neuroscience, topology, string theory gas cosmology, and mathematical philosophy</p>
         </header>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I am Reed Bambrough, a student going into 9th grade with a heavy passion for neuroscience, theoretical physics, emergent systems, governance, and mathematical philosphy</p>
-        </section>
-
-        <section id="projects">
-            <h2>Technical Projects</h2>
-            <div class="card">
-                <h3>NASA NEO Dashboard <span class="tag">Python</span></h3>
-                <p>A astrophysics dashboard mockup originally designed as a submission for the stardance competition. It uses NEO data from the NASA JPL Small-Body Database to visualize NEO's trajectories and characteristics on a 2D Plane. Try it out for yourself at the github repo below</p>
-                <a href="https://github.com/realreed/NASA-Dashboard-Project" class="btn" target="_blank">View Code on GitHub</a>
+        <details>
+            <summary><h2>About Me</h2></summary>
+            <div class="dropdown-content">
+                <p>Hello! I am Reed Bambrough, a student going into 9th grade with a deep passion for neuroscience, theoretical physics, emergent systems, governance, and mathematical philosophy.</p>
             </div>
-        </section>
+        </details>
 
-        <section id="services">
-            <h2>Freelance Services</h2>
+        <details>
+            <summary><h2>Technical Projects</h2></summary>
+            <div class="dropdown-content">
+                <div class="card">
+                    <h3>NASA NEO Dashboard <span class="tag">Python</span></h3>
+                    <p>An astrophysics dashboard mockup originally designed as a submission for the Stardance competition. It uses NEO data from the NASA JPL Small-Body Database to visualize NEO trajectories and characteristics on a 2D plane. Try it out for yourself at the GitHub repository below.</p>
+                    <a href="https://github.com/realreed/NASA-Dashboard-Project" class="btn" target="_blank">View Code on GitHub</a>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary><h2>Freelance Services</h2></summary>
+            <div class="dropdown-content">
                 <div class="card">
                     <h3>Editing Services <span class="tag">Freelance</span></h3>
-                    <p>I do professional video editing on Fiverr! You can see the link to my gig here. I specialize in short form content, you can see more information about it on my gig profile.</p>
+                    <p>I provide professional video editing services on Fiverr! You can find the link to my live gig below. I specialize in high-impact, short-form content. For pricing, package tiers, and delivery options, check out my profile page.</p>
                     <a href="#" class="btn" target="_blank">Order Editing via Fiverr</a>
                 </div>
-        </section>
-
-        <section id="essays">
-            <h2>Theoretical Notes & Essays</h2>
-            <div class="card">
-                <h3>Planetary Life Bias & Emergent Behavior</h3>
-                <p><em>Abstract:</em> An analysis of the weak anthropic principle in the context of emergent biases in planetary life. Humans are always talking about how current aspects of earth are perfectly "fine-tuned" for life, but this is a bias. Because we are alive, and the planet seems perfect to us, we fail to recognize the fact that the only reason we think it is perfect is because we exist on this planet.</p>
-                <p style="color: #8b949e; font-size: 14px;">[Full text coming soon]</p>
             </div>
+        </details>
 
-            <div class="card">
-                <h3>The Biobased Anthropic Theory of Emergent Mathematics</h3>
-                <p><em>Abstract:</em> An analysis exploring the Systemic relationship between the basis of biological lifeforms, size of the lifeform, state of the lifeform, and general biology of it. This is a direct counter-arguement to Platonism. The Biobased Anthropic Theory of Emergent Mathematics is a new school of thought in mathematical philosphy that states that mathematics are emergent principles that arises from the biology of the lifeform thinking of it. For example, a macroscopic, classical physics entity like a human has a biologically coded in understanding of basic arithmetic. Scaling down to planckian scales, a quantum lifeform would have a inherent understanding of mathematical concepts such as quantum dynamics, probability, and uncertainty. Arithmetic, however, would be at the forefront of their scholars knowledge. We also can see how mathematics are simply maps of logic designed to make a chaotic, quantum reality into a neat, logical one for the ease of understanding. We can see how math fails and physics is right in the pauli exclusion principle. In mathematical idealization, two points or objects can occupy the same coordinates or geometric space as another. However, physics pushes back at this in real life. According to the Pauli Exclusion Principle, two identical fermions, like two electrons, cannot have the same exact quantum values. </p>
-                <p style="color: #8b949e; font-size: 14px;">[Full text coming soon]</p>
+        <details>
+            <summary><h2>Theoretical Notes & Essays</h2></summary>
+            <div class="dropdown-content">
+                <div class="card">
+                    <h3>Planetary Life Bias & Emergent Behavior</h3>
+                    <p><em>Abstract:</em> An analysis of the weak anthropic principle in the context of emergent biases in planetary life. Humans often frame various features of Earth as being perfectly "fine-tuned" for life, but this is an inherent cognitive bias. Because we are alive, the environment seems perfect to us; we often fail to recognize that the perceived perfection is a retrospective illusion generated entirely by the biology that adapted to it.</p>
+                    <p style="color: #8b949e; font-size: 14px;">[Full text coming soon]</p>
+                </div>
+
+                <div class="card">
+                    <h3>The Biobiased Anthropic Theory of Emergent Mathematics (BATEM)</h3>
+                    <p><em>Abstract:</em> An analysis exploring the systemic relationship between the scale, environmental constraints, and general biology of an observer and their mathematical frameworks. Acting as a direct counter-argument to mathematical Platonism, BATEM posits that mathematical concepts are emergent principles rooted in an observer's evolutionary biology. For instance, a macroscopic observer bounded by classical physics (like a human) possesses an intuitively hardwired understanding of basic arithmetic. Conversely, a quantum-scale observer existing at the Planck length would inherently operate under mathematical principles of quantum dynamics, probability, and uncertainty, viewing macroscopic arithmetic as an advanced theoretical abstraction. Ultimately, mathematics serves as a structural map of logic constructed to filter a chaotic quantum reality into stable, scannable dimensions. The boundary where structural mathematical idealization fails and physical reality pushes back is clearly illustrated by the Pauli Exclusion Principle: while geometric coordinates easily allow multiple theoretical values to occupy the identical point space, physical fermions are explicitly barred from sharing identical quantum states.</p>
+                    <p style="color: #8b949e; font-size: 14px;">[Full text coming soon]</p>
+                </div>
             </div>
-        </section>
+        </details>
 
-        <section id="certifications">
-            <h2>Certifications & Studies</h2>
-            <ul>
-                <li><strong>HarvardX: Fundamentals of Neuroscience</strong> — <em>In Progress</em></li>
-                <li><strong>Google AI Essentials</strong> — <em>In Progress</em></li>
-                <li><strong>GitHub Foundations</strong> — <em>In Progress</em></li>
-            </ul>
-        </section>
-    </div>
-    <footer style="margin-top: 60px; border-top: 1px solid #30363d; padding-top: 20px; text-align: center; color: #8b949e; font-size: 12px;">
-            <p>&copy; 2026 [Your Name]. Theoretical essays licensed under CC BY-NC 4.0.</p>
+        <details>
+            <summary><h2>Certifications & Studies</h2></summary>
+            <div class="dropdown-content">
+                <ul>
+                    <li><strong>HarvardX: Fundamentals of Neuroscience</strong> — <em>In Progress</em></li>
+                    <li><strong>Google AI Essentials</strong> — <em>In Progress</em></li>
+                    <li><strong>GitHub Foundations</strong> — <em>In Progress</em></li>
+                </ul>
+            </div>
+        </details>
+
+        <footer style="margin-top: 60px; border-top: 1px solid #30363d; padding-top: 20px; text-align: center; color: #8b949e; font-size: 12px;">
+            <p>&copy; 2026 Reed Bambrough. Theoretical essays licensed under CC BY-NC 4.0.</p>
         </footer>
+    </div>
+
 </body>
 </html>
